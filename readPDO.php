@@ -1,11 +1,11 @@
 <?php
 
-$id = 5;
+$id = 0;
 
 try {
   $pdo = new PDO('mysql:host=127.0.0.1";dbname=crud', 'being', 'being');
   $stmt = $conn->prepare('SELECT * FROM fruta WHERE nome = :nome');
-  $stmt->execute(array('id' => $id));
+  $stmt->execute(array('nome' => $id));
 
   $result = $stmt->fetchAll();
 
