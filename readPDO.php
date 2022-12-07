@@ -1,13 +1,13 @@
 <?php
 
-$id = 0;
+
+
 
 try {
-  $pdo = new PDO('mysql:host=127.0.0.1";dbname=crud', 'being', 'being');
-  $stmt = $conn->prepare('SELECT * FROM fruta WHERE nome = :nome');
-  $stmt->execute(array('nome' => $id));
+  $pdo = new PDO('mysql:host=127.0.0.1;dbname=crud', 'being', 'being');
+  $stmt = $pdo->query("SELECT * FROM fruta");
+$result = $stmt->fetch();
 
-  $result = $stmt->fetchAll();
 
   if ( count($result) ) {
     foreach($result as $row) {
